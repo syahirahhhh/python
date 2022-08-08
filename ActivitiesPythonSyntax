@@ -1,0 +1,37 @@
+# ACTIVITIES #################################
+
+#ac1##########################################
+
+print("Python is fun!")
+
+print("Python is fun! Python is also easy.")
+
+print(
+    "Python is fun!")
+
+name1 = "Rebecca" # first name
+name2 = "Roberts" # last name
+print(name1)
+print(name2)
+
+#ac2##########################################
+
+output = "I love Python!"
+print(output)
+
+print("Python is fun!")
+#print("Python is also easy!")
+
+stateb=input("Enter the state you were born at: ")
+staten=input("Enter the state you live in now: ")
+print(f"So, you were born at {stateb} and now live in {staten}.")
+
+# SELF-ASSESSMENT ############################
+
+#syahirah, 08/08/2022
+
+fname=input("Enter your first name: ")
+lname=input("Enter your last name: ")
+num=input("Enter your phone number: ")
+year=input("Enter the year you were born in: ")
+print(f"So, your first name is {fname}, last name is {lname}, phone number is {num} and year born is {year}.")
