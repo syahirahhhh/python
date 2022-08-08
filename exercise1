@@ -3,3 +3,16 @@ age=3
 print(f"hello there {name} who is {age} years old!")
 
 #hello there lisa who is 3 years old!
+
+---------------------------------------------------------
+
+a=int(input("Enter a number over 100: "))
+b=int(input("Enter a number under 10: "))
+result=a/b
+print(result)
+
+ndays=int(input("Enter a number of days: "))
+nhours=ndays*24
+nmins=nhours*60
+nsecs=nmins*60
+print(f"There are {nhours} hours, {nmins} mins, or {nsecs} secs in {ndays} days.")
