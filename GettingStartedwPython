@@ -1,0 +1,100 @@
+# PRACTICE EXERCISES
+
+#ac1 done
+#ac2 done
+#ac3 done
+
+#ac4 #######################################################
+ptotal=float(input("Enter purchase total: "))
+tax=float(input("Enter sales tax rate: "))
+totalp=ptotal*(1+tax)
+print(f"Total price of sale is {totalp}.")
+
+#ac5 done
+
+#ac6 #######################################################
+first = float(input("Input a number: "))
+second = float(input("Input another number: "))
+
+if first > second:
+    print(f"{first} is greater than {second}.")
+elif first < second:
+    print(f"{second} is greater than {first}.")
+else:
+    print("They are the same number!")
+
+#ac7 done
+#ac8 done
+#ac9 done
+#ac10 done
+
+#ac11 #########################################################
+firstname="Robert"
+lastname="Taylor"
+address="25 Main Street"
+c="Paterson"
+s="NJ"
+z="07501"
+number="201-857-5309"
+print(f"Your firstname is {firstname}, lastname is {lastname}, address is {address}, city is {c}, state is {s}, zip is {z}, phone no is {number}.")
+change=input("Select one item in the Contact data that you want to change: ")
+changed=input("Change to? ")
+if change == "firstname":
+    firstname = changed
+elif change == "lastname":
+    lastname = changed
+elif change == "address":
+    address = changed
+elif change == "city":
+    c = changed
+elif change == "state":
+    s = changed
+elif change == "zip":
+    z = changed
+elif change == "phone no":
+    number = changed
+print(f"Your firstname is {firstname}, lastname is {lastname}, address is {address}, city is {c}, state is {s}, zip is {z}, phone no is {number}.")
+
+#ac12 #########################################################################
+fn=input("Enter firstname: ")
+ln=input("Enter lastname: ")
+addr=input("Enter street address: ")
+cit=input("Enter city: ")
+stat=input("Enter state: ")
+zi=input("Enter zip: ")
+numb=input("Enter phone number: ")
+eadd=input("Enter email address: ")
+print(f"Your input are as follows: firstname as {fn}, lastname as {ln}, street address as {addr}, city as {cit}, state as {stat}, zip as {zi}, phone number as {numb}, email address as {eadd}.")
+
+#ac13 #########################################################################
+#combination of ac11 and ac12
+
+fn=input("Enter firstname: ")
+ln=input("Enter lastname: ")
+addr=input("Enter street address: ")
+cit=input("Enter city: ")
+stat=input("Enter state: ")
+zi=input("Enter zip: ")
+numb=input("Enter phone number: ")
+eadd=input("Enter email address: ")
+print(f"Your input are as follows: firstname as {fn}, lastname as {ln}, street address as {addr}, city as {cit}, state as {stat}, zip as {zi}, phone number as {numb}, email address as {eadd}.")
+
+change=input("Select one item in the Contact data that you want to change: ")
+changed=input("Change to? ")
+if change == "firstname":
+    fn = changed
+elif change == "lastname":
+    ln = changed
+elif change == "street address":
+    addr = changed
+elif change == "city":
+    cit = changed
+elif change == "state":
+    stat = changed
+elif change == "zip":
+    zi = changed
+elif change == "phone number":
+    numb = changed
+elif change == "email address":
+    eadd = changed
+print(f"Your input are as follows: firstname as {fn}, lastname as {ln}, street address as {addr}, city as {cit}, state as {stat}, zip as {zi}, phone number as {numb}, email address as {eadd}.")
