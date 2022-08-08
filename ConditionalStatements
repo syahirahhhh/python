@@ -1,0 +1,77 @@
+#ACTIVITIES #######################################################
+
+#ac1 ##############################################################
+money=float(input("How much money do you have in your wallet? "))
+if money >= 20:
+    print("You're rich!")
+else:
+    print("You're broke!")
+
+#ac2 only if statements ##########################################
+cats=input("Do you own any cats?(yes/no) ")
+dogs=input("Do you own any dogs?(yes/no) ")
+if cats == "yes" and dogs == "yes":
+    print("You must really love pets!")
+elif cats == "no" or dogs =="no":
+    print("Maybe you need more pets.")
+
+
+#ac2 if-else statements ##########################################
+cats=input("Do you own any cats?(yes/no) ")
+dogs=input("Do you own any dogs?(yes/no) ")
+if cats == "yes" and dogs == "yes":
+    print("You must really love pets!")
+else:
+    print("Maybe you need more pets.")
+
+#ac3 #############################################################
+i=0
+q1=input("I have a cat.(true/false?) ")
+q2=input("I like to sleep.(true/false?) ")
+q3=input("I have eaten. (true/false?) ")
+if q1 == "false":
+    i+=1
+if q2 == "true":
+    i+=1
+if q3 == "false":
+    i+=1
+print(f"I have a cat. False! You answered {q1}.")
+print(f"I like to sleep. True! You answered {q2}.")
+print(f"I have eaten. False! You answered {q3}.")
+print(f"In total, you answered {i} questions correctly.")
+
+#ac4 ############################################################
+season=input("What season is it?(fall/winter/spring/summer) ")
+if season.lower() == "fall" or season.lower() == "autumn":
+    print("I bet the leaves are pretty there!")
+elif season.lower() == "winter":
+    print("I hope you're ready for snow!")
+elif season.lower() == "spring":
+    print("I can smell the flowers!")
+elif season.lower() == "summer":
+    print("Make sure your AC is working!")
+else:
+    print("I don't recognize that season.")
+
+# SELF-ASSESSMENT ###############################################
+name=input("What's your last name? ")
+lista=["A","B","C","D"]
+liste=["E","F","G","H"]
+listi=["I", "J", "K", "L"]
+listm=["M","N","O","P"]
+listq=["Q","R","S","T"]
+listu=["U","V","W","X","Y","Z"]
+if name.upper()[0] in lista:
+    team="Red Dragons"
+elif name.upper()[0] in liste:
+    team="Dark Wizards"
+elif name.upper()[0] in listi:
+    team = "Moving Castles"
+elif name.upper()[0] in listm:
+    team="Golden Snitches"
+elif name.upper()[0] in listq:
+    team="Night Guards"
+elif name.upper()[0] in listu:
+    team = "Black Holes"
+print(f"Aha! You're on the team {team}!")
+print("Good luck in the games!")
