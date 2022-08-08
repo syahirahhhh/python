@@ -1,0 +1,5 @@
+name="lisa"
+age=3
+print(f"hello there {name} who is {age} years old!")
+
+#hello there lisa who is 3 years old!
