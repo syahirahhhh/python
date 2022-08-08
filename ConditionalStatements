@@ -54,6 +54,8 @@ else:
     print("I don't recognize that season.")
 
 # SELF-ASSESSMENT ###############################################
+# Syahirah, 08/08/2022
+
 name=input("What's your last name? ")
 lista=["A","B","C","D"]
 liste=["E","F","G","H"]
