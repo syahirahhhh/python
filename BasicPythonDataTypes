@@ -1,0 +1,98 @@
+#ACTIVITIES #######################################################
+import math
+
+#ac1 ##############################################################
+num=input("Enter an integer: ")
+print(type(num))
+#output: <class 'str'>
+
+num1=float(num)
+print(f"The value is {num1} with type {type(num1)}")
+#output: The value is 2 with type <class 'int'>
+
+#if enter a float value, error with invalid literal for int().
+#if refactor program, there is output. eg: The value is 3.0 with type <class 'float'>
+
+#ac2 ##############################################################
+result = (5 + 3) ** 2 * 9
+
+print(result)  # the output is 576
+
+#ac3 ###############################################################
+num=float(input("Enter a float number: "))
+int1=math.trunc(num)
+print(int1)
+
+#ac4 ###############################################################
+P=float(input("Enter initial deposit: "))
+r=float(input("Enter interest rate: "))
+n=float(input("Enter no of times per year interest is calculated: "))
+t=float(input("Enter no of years since initial deposit: "))
+V= P*(1+r/n)**(n*t)
+print("You have input as follows:")
+print(f"P: initial deposit = {P}")
+print(f"r: interest rate = {r}")
+print(f"n: no of times per year interest is calculated: {n}")
+print(f"t: no of years since initial deposit: {t}")
+print(f"So, current value of deposit, V=P(1+r/n)^nt = {V}")
+
+#ac5 ###############################################################
+p=float(input("Enter principal amt: "))
+r=float(input("Enter interest rate: "))
+d=float(input("Enter no of days for a loan: "))
+inte=p*r*d/365
+print(f"So, simple interest for the life of the loan is {inte}")
+
+#ac6 ###############################################################
+a=0
+b=1
+print("Is a<b?")
+if a<b:
+    print("True")
+else:
+    print("False")
+#True. replace a=1,b=0, output is False.
+
+#ac7 ###############################################################
+num2=float(input("Enter a number: "))
+#print(f"You selected {num2}")
+#print(f"The boolean of your no is {bool(num2)}")
+num3=int(num2)
+#print(f"The binary equivalent of your no is {bin(num3)}")
+print(f"The sq root of your no is {round(math.sqrt(num2),3)}")
+
+#ac8 ###############################################################
+inte1=int(input("Enter 1st integer: "))
+inte2=int(input("Enter 2nd integer: "))
+inte3=int(input("Enter 3rd integer: "))
+inte4=int(input("Enter 4th integer: "))
+inte5=int(input("Enter 5th integer: "))
+list1=[inte1,inte2,inte3,inte4,inte5]
+product=math.prod(list1)
+avg=sum(list1)/len(list1)
+summ=sum(list1)
+print(f"The product of the integers is {product}")
+print(f"The average of the integers is {avg}")
+print(f"The sum of the integers is {summ}")
+
+#ac9 ###############################################################
+hno="25"
+strt="Main Street"
+print(f"Full address is {hno} {strt}")
+print(f"The building or house no is {hno}")
+print(f"The street name is {strt}")
+
+# SELF-ASSESSMENT ##################################################
+#Syahirah,08/08/2022
+
+f_name=input("Enter first name: ")
+l_name=input("Enter last name: ")
+city=input("Enter city where you live: ")
+hwage=float(input("Enter hourly wage: "))
+hours=float(input("Enter no of hours you work each week: "))
+ew=hwage*hours
+em=ew*4
+ey=em*12
+print(f"Hi, {f_name.capitalize()} {l_name.capitalize()}! How are you?")
+print(f"I hope the weather is nice in {city.capitalize()}.")
+print(f"Based on the information you provided, you earn {ew} dollars per week, approximately {em} dollars per month, and {ey} dollars per year.")
