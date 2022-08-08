@@ -1,0 +1,27 @@
+#Syahirah, 08/08/2022
+
+price=0
+size=input("Do you want small/medium/large? ")
+if size.lower() == "small":
+    price+=2
+elif size.lower() == "medium":
+    price+=3
+elif size.lower() == "large":
+    price+=4
+kind=input("Do you want brewed/espresso/cold brew? ")
+if kind.lower() == "brewed":
+    price+=0
+elif kind.lower() == "espresso":
+    price+=0.50
+elif kind.lower() == "cold brew":
+    price+=1
+flavoryo=input("Do you want a flavored syrup?(yes/no) ")
+if flavoryo.lower() == "yes":
+    price+=0.50
+    flavor=input("Do you want hazelnut/vanilla/caramel? ")
+    print(f"You asked for a {size} cup of {kind} coffee with {flavor} syrup.")
+else:
+    print(f"You asked for a {size} cup of {kind} coffee.")
+print(f"Your cup of coffee costs {price}.")
+pricetip=1.15*price
+print(f"The price with a tip is {round(pricetip,2)}.")
