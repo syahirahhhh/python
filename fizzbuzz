@@ -1,0 +1,24 @@
+# SELF-ASSESSMENT: FIZZ BUZZ
+
+#Syahirah, 10/08/2022
+n=int(input("How many fizzing and buzzing units do you need in your life? "))
+
+j=0
+print(0)
+for i in range(1,100): #can make 100 as big as infinity
+    if i%3==0 and i%5==0:
+        print("fizz buzz")
+        j+=1
+        continue
+    elif i%5==0:
+        print("buzz")
+        j+=1
+        continue
+    elif i%3==0:
+        print("fizz")
+        j+=1
+        continue
+    elif j==n:
+        print("TRADITION!!")
+        break
+    print(i)
