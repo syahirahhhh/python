@@ -1,0 +1,92 @@
+# SELF ASSESSMENT: TEXT COUNT ANALYSIS
+
+#step1: normalize the letter casing (done)
+s = """Imagine a vast sheet of paper on which straight Lines, Triangles, Squares, Pentagons, Hexagons, and other figures, instead of remaining fixed in their places, move freely about, on or in the surface, but without the power of rising above or sinking below it, very much like shadows - only hard and with luminous edges - and you will then have a pretty correct notion of my country and countrymen. Alas, a few years ago, I should have said "my universe": but now my mind has been opened to higher views of things."""
+s_lower=s.lower()
+
+#step2: split the string into words (done)
+words=list()
+words.extend(s_lower.split())
+print(words)
+
+#step3: count the words (done)
+print(len(words))
+
+#step4: count the distinct words (done)
+distinct=set(words)
+print(len(distinct))
+
+#step5: compute the word frequencies (done)
+word_freq=dict()
+for i in words:
+    word_freq[i] = word_freq.get(i,0) + 1
+print(word_freq)
+
+##practice for step5
+#w = ["haythem", "is", "eating", "tacos.", "haythem", "loves", "tacos", "", ":"]
+#freq_occur=dict()
+#for i in w:
+#    freq_occur[i]=freq_occur.get(i,0)+1
+#print(freq_occur)
+
+#step6: remove punctuation marks (done)
+import string
+punctuation_list = list(string.punctuation)
+print(words)
+w_clean = list()
+for i in words:
+    j=i.translate(str.maketrans('','',string.punctuation))
+    if j=='':
+        continue
+    else:
+        w_clean.append(j)
+print(w_clean)
+print(len(w_clean))
+
+##practice for step6
+#import string
+#punctuation_list = list(string.punctuation)
+    #display the punctuation_list
+#print(punctuation_list)
+#w = ["haythem!", "is", "eating", "tacos.", ".haythem", "loves", "tacos", "", ":"]
+#w_clean = list()
+#for i in w:
+#    j=i.translate(str.maketrans('','',string.punctuation))
+#    if j=='':
+#        continue
+#    else:
+#        w_clean.append(j)
+#print(w_clean)
+
+#step7: put it all together
+# FINAL SCRIPT ########################################################
+
+#1. Convert the string to lowercase characters.
+s = """Imagine a vast sheet of paper on which straight Lines, Triangles, Squares, Pentagons, Hexagons, and other figures, instead of remaining fixed in their places, move freely about, on or in the surface, but without the power of rising above or sinking below it, very much like shadows - only hard and with luminous edges - and you will then have a pretty correct notion of my country and countrymen. Alas, a few years ago, I should have said "my universe": but now my mind has been opened to higher views of things."""
+s_lower=s.lower()
+
+#2. Split the lowercase string into individual words.
+words=list()
+words.extend(s_lower.split())
+
+#3. Remove the punctuation from the lowercase words. Assume that all punctuation is either the first character or the last character of each item in the list.
+import string
+w_clean = list()
+for i in words:
+    j=i.translate(str.maketrans('','',string.punctuation))
+    if j=='':
+        continue
+    else:
+        w_clean.append(j)
+
+#4. Perform a count analysis on the words without punctuation characters.
+print(len(w_clean))
+
+#5. Display the dictionary with the word counts and the number of distinct words in the original string.
+word_freq=dict()
+for i in w_clean:
+    word_freq[i] = word_freq.get(i,0) + 1
+print(word_freq)
+
+distinct=set(w_clean)
+print(len(distinct))
