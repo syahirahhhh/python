@@ -1,0 +1,25 @@
+# SELF-ASSESSMENT 
+
+st={'a','b','c','d','e'}
+fst=st.copy()
+user=''
+while user.lower() !='quit':
+    val=input("Enter a value: ")
+    operation=input("Enter an operation:(add/remove) ")
+    if operation.lower()=="remove":
+        if val in fst:
+            fst.remove(val)
+            print(fst)
+        else:
+            print("Value does not exist")
+    elif operation.lower()=="add":
+        if val in fst:
+            print("Value exists")
+        else:
+            fst.add(val)
+            print(fst)
+    user=input("Enter 'quit' to quit program or just press Enter to continue: ")
+
+print(f"Original set is {st}")
+print(f"Final set is {fst}")
+print(f"Diff between original and final is removal of {st-fst} and addition of {fst-st}")
