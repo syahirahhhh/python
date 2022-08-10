@@ -1,0 +1,151 @@
+# LOOPS #
+# ACTIVITIES #
+
+# AC1 ##################################################
+fruit_list = ["apple", "banana", "cherry", "gooseberry",
+              "kumquat", "orange", "pineapple"]
+for i in fruit_list:
+    print(i)
+
+# AC2 ##################################################
+string1=input("Enter a string: ")
+for i in string1:
+    print(i)
+
+# AC3 ##################################################
+string2="lisa"
+count=0
+for i in string2:
+    count+=1
+print(count)
+
+# AC4 ###################################
+a = ["a", "bc", "rye", "hello", "c", ""]
+final=[]
+for i in a:
+    if len(i)>2:
+        final.append(i)
+print(final)
+
+# AC5 ###################################
+# script1: range
+for i in range(100,1001):
+    if i%50==0:
+        print(i)
+#script2: while
+start=100
+end=1000
+while start<= end:
+    if start%50==0:
+        print(start)
+    start+=1
+
+# AC6 ######################################
+ans=0
+for i in range(0,101):
+    ans+=i
+print(ans)
+
+# AC7 ###################################
+import math
+num=int(input("Enter a number: "))
+print(math.factorial(num))
+
+# AC8 ###########################
+fruit_list = ["apple", "banana", "cherry", "gooseberry",
+"kumquat", "orange", "pineapple"]
+newfruit=input("Enter a fruit: ")
+for findex,fval in enumerate(fruit_list):
+    if newfruit == fval:
+        print(findex)
+    elif newfruit != fval and newfruit != "stop":
+        print("fruit is not in list")
+        newfruit = input("enter another fruit: ")
+    elif newfruit == "stop":
+        print("Out of loop")
+        break
+
+# AC9 #########################################
+list1=[]
+user=''
+while user.lower() !="quit":
+  list1.append(int(input("Enter an integer: ")))
+  user=input("Enter 'quit' to quit program or just press Enter to continue: ")
+print(f"You have entered: {list1}")
+print(f"The sum of these integers are {sum(list1)}")
+
+# AC10 ####################################
+num=int(input("Enter an integer: "))
+for i in range(1,num+1):
+    answer=i**2
+    print(i, "x", i, "=", answer)
+
+# AC11 ###################################
+prime=[]
+for i in range(2,101): #0 and 1 not prime nos
+  count=0
+  for j in range(2,i):
+    if i%j==0:
+      count+=1
+      break
+  if count==0:
+    prime.append(i)
+print(prime)
+
+# AC12 ###################################
+a=18
+b=27
+min1=min(a,b)
+while min1:
+    if a%min1==0 and b%min1==0:
+        break
+    min1 -=1
+print(min1)
+
+# AC13 ################################
+num=334
+for i in range(0,10):
+    count=0
+    temp=num
+    while temp>0:
+        digit=temp%10
+        if digit==i:
+            count+=1
+        temp=temp//10
+    if count>0:
+        print(f"{i} occurs {count} times")
+
+# AC14 #######################################
+a=4
+b=6
+if a>b:
+    greater=a
+else:
+    greater=b
+while(True):
+    if greater%a==0 and greater%b==0:
+        lcm=greater
+        break
+    greater+=1
+print(lcm)
+
+# AC15 #######################################
+num=int(input("Enter a number: "))
+prime=[]
+for i in range(2,num):
+  count=0
+  for j in range(2,i):
+    if i%j==0:
+      count+=1
+      break
+  if count==0:
+    prime.append(i)
+count1=0
+for i in range(2,num//2+1):
+    if i in prime and (num-i) in prime:
+        count1+=1
+        break
+if count1==1:
+    print(f"The number {num} can be expressed as the sum of 2 prime numbers")
+else:
+    print(f"The number {num} cannot be expressed as the sum of 2 prime numbers")
