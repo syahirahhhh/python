@@ -1,0 +1,57 @@
+# BASIC DATA STRUCTURES ################################
+# ACTIVITIES #########################################
+
+#AC1
+name=input("Enter your name: ")
+age=input("Enter your age: ")
+bday=input("Enter your birthday: ")
+live=input("Enter where you live: ")
+lis=[name,age,bday,live]
+print(lis)
+
+# AC2 #
+a = 0
+while a < 4:
+    add1 = input("Enter another item to add: ")
+    lis.append(add1)
+    add2 = input("Enter another item to add: ")
+    lis.append(add2)
+    quit = input("Do you want to quit?(yes/no) ").lower()
+    a += 2
+    if a > 1 and quit == 'yes':
+        break
+print(lis)
+
+# AC3 #
+lis=['lisa', '3', '1006', 'sg']
+print(lis)
+rem=input("Enter a item to delete from list: ")
+lis.remove(rem)
+print(lis)
+
+# AC4 #
+lis=['lisa', '3', '1006', 'sg']
+print(lis)
+change=input("Select one item to update: ")
+changed=input("Enter new value for that item: ")
+i=lis.index(change)
+lis[i]=changed
+print(lis)
+
+# AC5 #
+tup1=('syahirah','sapnan')
+tup2=('student',)
+tup3=('123 Avenue',)
+tup4=('456 Street',)
+tup5=(tup1+tup2+tup3+tup4)
+print(tup5)
+
+# AC6 #
+tup5=('syahirah', 'sapnan', 'student', '123 Avenue', '456 Street')
+ls=list(tup5)
+change=input("Select one item to change: ")
+changed=input("Enter new value for that item: ")
+i=ls.index(change)
+ls[i]=changed
+tup5=tuple(ls)
+print(tup5)
