@@ -1,7 +1,7 @@
 # BASIC DATA STRUCTURES ################################
-# ACTIVITIES #########################################
+# ACTIVITIES ###########################################
 
-#AC1
+# AC1 #
 name=input("Enter your name: ")
 age=input("Enter your age: ")
 bday=input("Enter your birthday: ")
