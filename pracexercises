@@ -1,0 +1,40 @@
+# Practice Exercises: Using Loops and Data Structures
+
+# AC1-AC5 repeated #
+
+# AC6 #
+num = []
+for i in range(1, 11):
+    num.append(int(input("Enter an integer: ")))
+    if i >= 5:
+        quit = input("Do you want to quit?(yes,no): ").lower()
+        if quit == 'yes':
+            break
+min1 = num[0]
+man1 = num[0]
+a = 0
+b = 1
+for j in num:
+    a += j
+    b *= j
+    if j < min1:
+        min1 = j
+    if j > man1:
+        man1 = j
+    avg = a / len(num)
+print(f"Values entered:{num}\nProduct of integers: {b}\nAverage: {avg}\nSum: {a}\nMin: {min1}\nMax: {man1}")
+
+# AC7 repeated #
+
+# AC8 #
+freq_count = {"hello": 4, "world": 4, "I": 1, "am": 2, "Martha":"3"}
+user = int(input("Enter a value: "))
+c = 0
+for key, value in freq_count.items():
+    if value == user:
+        print(f"{key}:{value}")
+        c += 1
+if c == 0:
+    print("Value does not exist")
+
+# AC9 repeated #
