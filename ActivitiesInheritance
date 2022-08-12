@@ -1,0 +1,126 @@
+# AC0 #
+class Food:
+    name_of_food=""
+    type_of_food=""
+    usual_mealtime=""
+    def __init__(self,name,type,umealt):
+        self.name_of_food=name
+        self.type_of_food=type
+        self.usual_mealtime=umealt
+    def display(self): # AC4 #
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+
+class Menu(Food): # AC1 #
+    pass
+
+a=Menu("Burger","Western","Lunch")
+a.display()
+b=Menu("Bingsu","Korean","Dessert")
+b.display()
+
+# AC2 #
+class Menu(Food):
+    menu_price=None
+    menu_usualservingperpax=None
+    def __init__(self,menp,menuser,name,type,umealt):
+        self.menu_price=menp
+        self.menu_usualservingperpax=menuser
+        self.name_of_food=name #
+        self.type_of_food=type #
+        self.usual_mealtime=umealt # or AC4 just put Food.__init__(self,name,type,umealt)
+    def display(self): #override
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+        print(f"In the menu, its price is ${self.menu_price} and its usual serving per pax is {self.menu_usualservingperpax}.")
+
+a=Menu("10.50","1","Burger","Western","Lunch")
+a.display()
+a.menu_price="10.50"
+a.menu_usualservingperpax="1"
+print(a.menu_price)
+print(a.menu_usualservingperpax)
+a.display()
+
+b=Menu("12","1","Bingsu","Korean","Dessert")
+b.menu_price="12"
+b.menu_usualservingperpax="1"
+b.display()
+
+# AC3 #
+class Recipe(Food):
+    no_of_ingredients=None
+    preparation_time=None
+    difficulty_level=None
+    def __init__(self,ning,pept,diff,name,type,umealt):
+        self.no_of_ingredients=ning
+        self.preparation_time=pept
+        self.difficulty_level=diff
+        self.name_of_food=name
+        self.type_of_food=type
+        self.usual_mealtime=umealt
+    def display(self):
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+        print(f"It requires {self.no_of_ingredients} ingredients, takes {self.preparation_time} min to prepare, "
+              f"with difficulty level of {self.difficulty_level}.")
+
+class Location(Food):
+    hotline = None
+    street = None
+    zipcode = None
+    def __init__(self,hline,st,zc,name,type,umealt):
+        self.hotline=hline
+        self.street=st
+        self.zipcode=zc
+        self.name_of_food=name
+        self.type_of_food=type
+        self.usual_mealtime=umealt
+    def display(self):
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+        print(f"Can be found at {self.street}, {self.zipcode}, with hotline of {self.hotline}.")
+
+a=Recipe("10","60","5","Burger","Western","Lunch")
+a.display()
+
+b=Recipe("6","30","4","Bingsu","Korean","Dessert")
+b.display()
+
+a=Location("12345678","Apple Street","S789345","Burger","Western","Lunch")
+a.display()
+
+b=Location("67891234","Banana Drive","S654321","Bingsu","Korean","Dessert")
+b.display()
+
+# AC5 #
+class State(Recipe):
+    solid=None
+    liquid=None
+    def __init__(self,ning,pept,diff,name,type,umealt,sl,lq):
+        Recipe.__init__(self,ning,pept,diff,name,type,umealt)
+        self.solid=sl
+        self.liquid=lq
+    def display(self):
+        Recipe.display(self)
+        print(f"Ingredients include {self.solid} and {self.liquid}.")
+
+a=State("10","60","5","Burger","Western","Lunch","Bread","Sauce")
+a.display()
+
+b=State("6","30","4","Bingsu","Korean","Dessert","Ice","Milk")
+b.display()
+
+# AC6 #
+class Measurement(State):
+    grams=None
+    def __init__(self,ning,pept,diff,name,type,umealt,sl,lq,g):
+        State.__init__(self,ning,pept,diff,name,type,umealt,sl,lq)
+        self.grams=g
+    def display(self):
+            State.display(self)
+            print(f"{self.grams}g of {self.solid}.")
+
+a=Measurement("10","60","5","Burger","Western","Lunch","Bread","Sauce","10")
+a.display()
+
+print(isinstance(a,State)) #True
+print(isinstance(a,Recipe)) #True
+print(isinstance(a,Food)) #True
+print(isinstance(a,Menu)) #False
