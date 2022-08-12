@@ -1,0 +1,94 @@
+# AC1 #
+class Food: # noun is food (class)
+    name_of_food=""
+    type_of_food=""
+    usual_mealtime="" # attributes are name,type, usual mealtimes
+
+# AC2 #
+food_1=Food()
+food_1.name_of_food="Burger"
+food_1.type_of_food="Western"
+food_1.usual_mealtime="Lunch"
+
+print(food_1.name_of_food)
+print(food_1.type_of_food)
+print(food_1.usual_mealtime)
+
+food_2=Food()
+food_2.name_of_food="Rojak"
+food_2.type_of_food="Indian"
+food_2.usual_mealtime="Lunch"
+
+print(food_2.name_of_food)
+print(food_2.type_of_food)
+print(food_2.usual_mealtime)
+
+food_3=Food()
+food_3.name_of_food="Bingsu"
+food_3.type_of_food="Korean"
+food_3.usual_mealtime="Dessert"
+
+print(food_3.name_of_food)
+print(food_3.type_of_food)
+print(food_3.usual_mealtime)
+
+food_4=Food()
+food_4.name_of_food="Waffles" # 4 diff objs are Burger,Rojak,Bingsu,Waffles
+food_4.type_of_food="Western"
+food_4.usual_mealtime="Breakfast"
+
+print(food_4.name_of_food)
+print(food_4.type_of_food)
+print(food_4.usual_mealtime)
+
+# AC3 #
+class Food:
+    name_of_food=""
+    type_of_food=""
+    usual_mealtime=""
+    def __init__(self,name,type,umealt):
+        self.name_of_food=name
+        self.type_of_food=type
+        self.usual_mealtime=umealt
+    def display_info(self): # AC4 #
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+        # method is display_info
+
+food_1=Food("Burger","Western","Lunch")
+food_2=Food("Rojak","Indian","Lunch")
+food_3=Food("Bingsu","Korean","Dessert")
+food_4=Food("Waffles","Western","Breakfast")
+food_1.display_info()
+food_2.display_info()
+food_3.display_info()
+food_4.display_info()
+
+# AC5 #
+class Location:
+    hotline=None
+    street=None
+    zipcode=None
+    def __init__(self,hline,st,zc):
+        self.hotline=hline
+        self.street=st
+        self.zipcode=zc
+    def display(self):
+        print(f"Can be found at {self.street}, {self.zipcode}, with hotline of {self.hotline}.")
+
+class Food:
+    name_of_food=None
+    type_of_food=None
+    usual_mealtime=None
+    location=None
+    def __init__(self,name,type,umealt,loc):
+        self.name_of_food=name
+        self.type_of_food=type
+        self.usual_mealtime=umealt
+        self.location=loc
+    def display(self): # AC4 #
+        print(f"{self.name_of_food} is a(n) {self.type_of_food} food, usually eaten during {self.usual_mealtime}.")
+        self.location.display()
+
+loc=Location("+65 87654321","Arab Street","S745103")
+fd=Food("Rojak","Indian","Lunch",loc)
+fd.display()
