@@ -1,0 +1,86 @@
+# INHERITANCE SELF-ASSESSMENT: FILE SYSTEM #
+
+class FileItem:
+    permissions=""
+    owner=""
+    size=""
+    def __init__(self,pm,o,s):
+        self.permissions=pm
+        self.owner=o
+        self.size=s
+    def display(self):
+        print(f"Permissions: {self.permissions}, Owner: {self.owner}, Size: {self.size}.")
+
+class CsvFile(FileItem):
+    row=None
+    column=None
+    def __init__(self,pm,o,s,r,c):
+        self.permissions = pm # why when put FileItem.__init__(self,pm,o,s) gives error, parameter s unfilled?
+        self.owner = o
+        self.size = s
+        self.row=r
+        self.column=c
+    def display(self):
+        FileItem.display(self)
+        print(f"Rows: {self.row}, Columns: {self.column}.")
+
+csv1=CsvFile("Yes","Anna","10KB","10","10")
+csv2=CsvFile("Yes","Ben","15KB","50","20")
+csv3=CsvFile("No","Cam","5KB","5","15")
+
+class JpgFile(FileItem):
+    pixel=None
+    resolution=None
+    def __init__(self,pm,o,s,p,res):
+        self.permissions = pm
+        self.owner = o
+        self.size = s
+        self.pixel=p
+        self.resolution=res
+    def display(self):
+        FileItem.display(self)
+        print(f"Pixel: {self.pixel}, Resolution: {self.resolution}.")
+
+jpg1=JpgFile("Yes","Anna","30KB","13","360")
+jpg2=CsvFile("No","Ben","70KB","20","720")
+jpg3=CsvFile("No","Cam","50KB","30","480")
+
+class Mp3File(FileItem):
+    playtime=None
+    type=None
+    def __init__(self,pm,o,s,pt,t):
+        self.permissions = pm
+        self.owner = o
+        self.size = s
+        self.playtime=pt
+        self.type=t
+    def display(self):
+        FileItem.display(self)
+        print(f"Playtime: {self.playtime}, Type: {self.type}.")
+
+mp31=Mp3File("No","Anna","3GB","3min","Pop")
+mp32=CsvFile("Yes","Ben","3.5GB","3.5min","Funk")
+mp33=CsvFile("No","Cam","4GB","4min","Rock")
+
+class Directory(FileItem):
+    dirname=None
+    dirs=None
+    file=None
+    def __init__(self,pm,o,s,dn,ds,f):
+        self.permissions = pm
+        self.owner = o
+        self.size = s
+        self.dirname=dn
+        self.dirs=ds
+        self.file=f
+    def display(self):
+        FileItem.display(self)
+        print(f"Directory name: {self.dirname}, Contains Directories: {self.dirs} and Contains File: {self.file}.")
+
+dir1=Directory("No", "Anna", "10GB", "Downloads", "Music, Lectures","jpg1.jpg")
+dir2=Directory("Yes", "Ben", "15GB", "Music", "English","nil")
+dir3=Directory("Yes", "Cam", "20GB", "English", "nil","mp31.mp3")
+
+dir1.display()
+dir2.display()
+dir3.display()
