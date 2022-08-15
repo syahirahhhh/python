@@ -20,22 +20,27 @@ class SimpleCalculator:
     def division(self):
         result = self.num1 / self.num2
         print(f"{self.num1} {self.oper} {self.num2} = {result}")
-    def quit(self):
-        print("End of program, thank you!")
 
-num_1=int(input("Enter a number: "))
-num_2=int(input("Enter another number: "))
-operation=input("Enter a math operation:(+,-,*,/) ")
+quit=''
+while quit!="exit" and quit!="quit":
+    num_1=int(input("Enter a number: "))
+    num_2=int(input("Enter another number: "))
+    operation=input("Enter a math operation:(+,-,*,/) ")
 
-prog=SimpleCalculator(num_1,num_2,operation)
+    prog=SimpleCalculator(num_1,num_2,operation)
 
-if operation == "+":
-    prog.addition()
-elif operation == "-":
-    prog.subtraction()
-elif operation == "*":
-    prog.multiplication()
-elif operation == "/":
-    prog.division()
+    if operation == "+":
+        prog.addition()
+    elif operation == "-":
+        prog.subtraction()
+    elif operation == "*":
+        prog.multiplication()
+    elif operation == "/":
+        prog.division()
+    else:
+        print("Operator invalid, try again")
+    quit=input("Do you want to continue or exit/quit? ").lower()
 
-#havent done the quit and exit
+print("End of program, thank you!")
+
+
