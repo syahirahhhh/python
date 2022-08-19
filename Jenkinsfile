@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'python3 -m py_compile add2vals.py calc.py'
-                stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
         stage('Test') {
@@ -20,7 +19,6 @@ pipeline {
             }
             steps {
                 dir(path: env.BUILD_ID) {
-                    unstash(name: 'compiled-results')
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F add2vals.py'"
                 }
             }
