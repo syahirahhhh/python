@@ -23,11 +23,11 @@ class SimpleCalculator:
 
 quit=''
 while quit!="exit" and quit!="quit":
-    num_1=int(input("Enter a number: "))
-    num_2=int(input("Enter another number: "))
-    operation=input("Enter a math operation:(+,-,*,/) ")
+    num1=int(input("Enter a number: "))
+    num2=int(input("Enter another number: "))
+    oper=input("Enter a math operation:(+,-,*,/) ")
 
-    prog=SimpleCalculator(num_1,num_2,operation)
+    prog=SimpleCalculator(num1,num2,oper)
 
     if operation == "+":
         prog.addition()
