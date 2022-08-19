@@ -23,9 +23,6 @@ class SimpleCalculator:
 
 quit=''
 while quit!="exit" and quit!="quit":
-    num1=int(input("Enter a number: "))
-    num2=int(input("Enter another number: "))
-    oper=input("Enter a math operation:(+,-,*,/) ")
 
     prog=SimpleCalculator(num1,num2,oper)
 
