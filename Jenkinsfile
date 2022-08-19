@@ -1,21 +1,16 @@
-pipeline {                        
-  agent any                     
-  stages {                         
-    stage('build') {
-      steps {
-        echo 'building the application…'
-      }
+pipeline {
+    agent none 
+    stages {
+        stage('Build') { 
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
+            }
+            steps {
+                sh 'python -m py_compile sources/add2vals.py sources/calc.py' 
+                stash(name: 'compiled-results', includes: 'sources/*.py*') 
+            }
+        }
     }
-    stage('test') {
-      steps {
-        echo 'testing the application…'
-      }
-    }
-    stage('deploy') {
-      steps {
-        echo 'deploying the application…'
-        sh 'python3 ASimpleCalculator.py'
-      }
-    }
-  }
 }
