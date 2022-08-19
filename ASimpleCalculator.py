@@ -21,22 +21,18 @@ class SimpleCalculator:
         result = self.num1 / self.num2
         print(f"{self.num1} {self.oper} {self.num2} = {result}")
 
-quit=''
-while quit!="exit" and quit!="quit":
+prog=SimpleCalculator(num1,num2,oper)
 
-    prog=SimpleCalculator(num1,num2,oper)
-
-    if operation == "+":
-        prog.addition()
-    elif operation == "-":
-        prog.subtraction()
-    elif operation == "*":
-        prog.multiplication()
-    elif operation == "/":
-        prog.division()
-    else:
-        print("Operator invalid, try again")
-    quit=input("Do you want to continue or exit/quit? ").lower()
+if operation == "+":
+    prog.addition()
+elif operation == "-":
+    prog.subtraction()
+elif operation == "*":
+    prog.multiplication()
+elif operation == "/":
+    prog.division()
+else:
+    print("Operator invalid, try again")
 
 print("End of program, thank you!")
 
